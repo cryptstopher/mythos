@@ -1,7 +1,7 @@
 <?php
 /**
  * @package Mythos
- * @version 0.1.10
+ * @version 1.0
  */
 /*
 Plugin Name: Mythos

@@ -33,7 +33,7 @@ if( ! function_exists( 'hpl_create_post_type' ) ) :
 				//'author',
 				//'trackbacks',
 				//'custom-fields',
-				//'comments',
+				'comments',
 				'revisions',
 				//'page-attributes', // (menu order, hierarchical must be true to show Parent option)
 				'post-formats',
@@ -45,7 +45,7 @@ if( ! function_exists( 'hpl_create_post_type' ) ) :
 			'taxonomies' => array( 'category', 'post_tag' ),
 		);
 		register_post_type( 'hpl', $args );
-		//flush_rewrite_rules();
+		flush_rewrite_rules();
 		register_taxonomy( 'hpl_locales', // register custom taxonomy - category
 			'hpl',
 			array(

@@ -1,6 +1,6 @@
 <?php 
-add_action( 'init', 'create_post_type' );
-function create_post_type() {
+add_action( 'init', 'hpl_note_create_post_type' );
+function hpl_note_create_post_type() {
   register_post_type( 'hpl_note',
     array(
       'labels' => array(
@@ -17,7 +17,7 @@ function create_post_type() {
 		'not_found_in_trash' => 'No notes found in trash',
 		'parent_item_colon' => 'Parent note',
       ),
-      'taxonomies' => array( 'hpl_locales', 'category', 'post_tag', 'hpl_tag', 'hpl_characters', 'hpl_monsters' ),
+      'taxonomies' => array( 'hpl_locales', 'category', 'post_tag', 'hpl_tag', 'hpl_characters', 'hpl_mythos', 'hpl_monsters' ),
       'public' => true,
       'rewrite' => array('slug' => 'notes'),
       'has_archive' => true,
@@ -27,5 +27,6 @@ function create_post_type() {
       'supports' => array('excerpt','title','editor','excerpt','thumbnail','revisions','post-formats'),
     )
   );
+  flush_rewrite_rules();
 }
 ?>
